@@ -1,0 +1,149 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+    color: #333;
+}
+
+header {
+    background-color: #ffcc00;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    color: #fff;
+}
+
+main {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+section {
+    margin-bottom: 20px;
+}
+
+h2 {
+    color: #ffcc00;
+}
+
+.centered-title {
+    text-align: center;
+    font-size: 2em; /* Taille de la police, ajustez selon vos préférences */
+    color: #00509E; /* Bleu Disney, ajustez selon vos préférences */
+}
+
+.home-button-section {
+    text-align: center;
+}
+
+.home-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #c300ff; /* Orange Disney, ajustez selon vos préférences */
+    color: #ffffff; /* Blanc pour le texte, ajustez selon vos préférences */
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 10px 0;
+}
+
+.centered-title {
+    text-align: center;
+}
+
+
+/* Ajoutez des styles spécifiques au thème Disneyland */
+header {
+    background-color: #003366; /* Bleu foncé, couleur emblématique de Disneyland */
+}
+
+h2 {
+    color: #003366; /* Utilisez la même couleur pour les titres */
+}
+
+main {
+    border: 2px solid #003366; /* Bordure autour du contenu principal */
+    border-radius: 10px; /* Coins arrondis */
+}
+
+footer {
+    background-color: #ffcc00; /* Jaune, couleur du château de Disneyland */
+}
+
+.gift {
+    width: 30px;
+    height: 30px;
+    background-image: url('cadeau.png');
+    background-size: cover;
+    position: fixed;
+    top: -30px;
+    border-radius: 50%;
+    left: calc(100% * var(--start-position));
+}
+
+.snowflake {
+    width: 30px;
+    height: 30px;
+    background-image: url('neige.png');
+    background-size: cover;
+    position: fixed;
+    top: -30px;
+    border-radius: 50%;
+    left: calc(100% * var(--start-position));
+}
+
+/* Styles pour les feux d'artifice */
+.firework {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    background-color: #FFD700; /* Jaune Disney, ajustez selon vos préférences */
+    border-radius: 50%;
+    animation: fireworkAnimation 2s infinite;
+}
+
+.left {
+    left: 10%;
+    animation-delay: 0.5s; /* Retarder l'animation du feu d'artifice à gauche */
+}
+
+.right {
+    right: 10%;
+    animation-delay: 1s; /* Retarder l'animation du feu d'artifice à droite */
+}
+
+@keyframes fireworkAnimation {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+    50% {
+        transform: translateY(-100px) rotate(180deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(0) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+
+@media only screen and (max-width: 600px) {
+    .gift, .snowflake {
+        animation-duration: 10s; /* Ajustez la durée de l'animation pour les petits écrans */
+    }
+}

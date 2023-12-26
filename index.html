@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Annonce de Cadeau</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Joyeux Noël ❤️</h1>
+    </header>
+
+    <main>
+        <section>
+            <div class="gift-details">
+                <h2 class="centered-title">Ton Cadeau</h2>
+                <p class="centered-title">Un Week-End avec Moi et Mickey !</p>
+            </div>
+
+            <h2>Instructions pour réaliser le cadeau :</h2>
+            <ul>
+                <li>Prendre le train à la gare de Bruxelles et voyager jusqu'à Disney le vendredi soir 🚄</li>
+                <li>Me retrouver pour aller dans notre demeure 🏰</li>
+                <li>Se rendre à Disney le samedi matin pour 2 jours de bonheur ! 🎢</li>
+            </ul>
+        </section>
+
+        <!-- Photo en dehors du bloc -->
+        <section class="photo-section">
+            <img src="disney.jpg" alt="photo">
+        </section>
+
+        <!-- Bouton de la maison -->
+        <section class="home-button-section">
+            <a href="https://www.airbnb.fr/rooms/989662634005342508?adults=2&location=Disneyland%20Paris%2C%20Boulevard%20de%20Parc%2C%20Coupvray%2C%20France&check_in=2024-02-02&check_out=2024-02-04&source_impression_id=p3_1703622986_oGKslSYlg1R2ViW3&previous_page_section_name=1001&federated_search_id=ae0d7fd6-7e2a-44c6-9eb5-3d52c3599b6a">
+                <button class="home-button">Notre logement</button>
+            </a>
+        </section>
+    </main>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Créer des éléments (flocons ou cadeaux) de manière aléatoire
+            function createRandomElement() {
+                const random = Math.random();
+                const startPosition = Math.random();
+
+                if (random < 0.5) {
+                    // Créer un flocon
+                    const snowflake = document.createElement("div");
+                    snowflake.className = "gift snowflake";
+                    document.body.appendChild(snowflake);
+                    snowflake.style.setProperty('--start-position', startPosition);
+
+                    // Animation de chute
+                    snowflake.animate(
+                        [
+                            { transform: "translateY(-100vh) rotate(0deg)" },
+                            { transform: "translateY(" + window.innerHeight + "px) rotate(360deg)" }
+                        ],
+                        {
+                            duration: Math.random() * 6000 + 4000,
+                            iterations: Infinity,
+                            easing: "linear"
+                        }
+                    );
+                } else {
+                    // Créer un cadeau
+                    const gift = document.createElement("div");
+                    gift.className = "gift";
+                    document.body.appendChild(gift);
+                    gift.style.setProperty('--start-position', startPosition);
+
+                    // Animation de chute
+                    gift.animate(
+                        [
+                            { transform: "translateY(-100vh)" },
+                            { transform: "translateY(" + window.innerHeight + "px)" }
+                        ],
+                        {
+                            duration: Math.random() * 6000 + 4000,
+                            iterations: Infinity,
+                            easing: "linear"
+                        }
+                    );
+                }
+            }
+
+            // Créer des éléments (flocons et cadeaux) lorsque la page est chargée
+            for (let i = 0; i < 10; i++) {
+                createRandomElement();
+            }
+        });
+    </script>
+</body>
+</html>
